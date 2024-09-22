@@ -85,3 +85,11 @@ vim.api.nvim_set_keymap('i', '<C-K>', 'copilot#Next()', { silent = true, expr = 
 vim.g.python3_host_prog = '/home/brent/anaconda3/bin/python'
 
 -- vim: ts=2 sts=2 sw=2 et
+--
+vim.opt.foldmethod = 'expr'
+vim.opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+vim.opt.foldlevel = 99
+vim.opt.foldlevelstart = 1
+vim.opt.foldnestmax = 4
+vim.opt.foldcolumn = '0'
+vim.opt.foldtext = 'nvim_treesitter#foldtext()'
