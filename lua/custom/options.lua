@@ -82,4 +82,6 @@ vim.api.nvim_set_keymap('i', '<C-J>', 'copilot#Accept("<CR>")', { silent = true,
 vim.api.nvim_set_keymap('i', '<C-H>', 'copilot#Previous()', { silent = true, expr = true })
 vim.api.nvim_set_keymap('i', '<C-K>', 'copilot#Next()', { silent = true, expr = true })
 
+vim.g.python3_host_prog = '/home/brent/anaconda3/bin/python'
+
 -- vim: ts=2 sts=2 sw=2 et
