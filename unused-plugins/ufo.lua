@@ -3,6 +3,11 @@ return {
     'kevinhwang91/nvim-ufo',
     dependencies = { 'kevinhwang91/promise-async' },
     config = function()
+      vim.opt.foldlevel = 99
+      vim.opt.foldlevelstart = 1
+      vim.opt.foldnestmax = 4
+      vim.opt.foldcolumn = '0'
+
       -- Key mappings
       vim.keymap.set('n', 'zR', require('ufo').openAllFolds)
       vim.keymap.set('n', 'zM', require('ufo').closeAllFolds)

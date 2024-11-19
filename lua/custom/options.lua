@@ -87,7 +87,9 @@ vim.g.python3_host_prog = '/home/brent/anaconda3/bin/python'
 
 -- vim: ts=2 sts=2 sw=2 et
 --
-vim.opt.foldmethod = 'expr'
+-- The UFO plugin defines these values.
+-- vim.opt.foldmethod = 'manual'
+
 vim.opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
 vim.opt.foldlevel = 99
 vim.opt.foldlevelstart = 1
