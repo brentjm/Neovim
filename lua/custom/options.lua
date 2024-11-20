@@ -77,16 +77,10 @@ vim.opt.autoindent = true
 -- Use TokeyNight theme
 vim.cmd.colorscheme 'tokyonight-day'
 
--- Copilot keybindings
-vim.api.nvim_set_keymap('i', '<C-J>', 'copilot#Accept("<CR>")', { silent = true, expr = true })
-vim.api.nvim_set_keymap('i', '<C-H>', 'copilot#Previous()', { silent = true, expr = true })
-vim.api.nvim_set_keymap('i', '<C-K>', 'copilot#Next()', { silent = true, expr = true })
-vim.api.nvim_command 'command! -range -nargs=* CC <line1>,<line2>CopilotChat <q-args>'
-
 vim.g.python3_host_prog = '/home/brent/anaconda3/bin/python'
 
+vim.opt.foldlevelstart = 99
 vim.opt.foldlevel = 99
-vim.opt.foldlevelstart = 1
 vim.opt.foldnestmax = 4
 vim.opt.foldcolumn = '0'
 

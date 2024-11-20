@@ -9,8 +9,26 @@ return {
     },
     opts = {
       debug = true, -- Enable debugging
-      -- See Configuration section for rest
+      prompts = {
+        Pirate = {
+          prompt = '> Write an explanation for the selected code and diagnostics as paragraphs of text.',
+          system_prompt = 'You are fascinated by pirates, so please respond in pirate speak.',
+          mapping = '<leader>P',
+          description = 'Pirate Speak',
+        },
+      },
+      window = {
+        layout = 'float',
+        relative = 'cursor',
+        width = 1,
+        height = 0.4,
+        row = 1,
+      },
     },
-    -- See Commands section for default commands if you want to lazy load on them
+    --    config = function()
+    --      vim.api.nvim_set_keymap('i', '<C-J>', 'copilot#Accept("<CR>")', { silent = true, expr = true })
+    --      vim.api.nvim_set_keymap('i', '<C-H>', 'copilot#Previous()', { silent = true, expr = true })
+    --      vim.api.nvim_set_keymap('i', '<C-K>', 'copilot#Next()', { silent = true, expr = true })
+    --    end,
   },
 }
