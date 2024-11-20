@@ -85,14 +85,22 @@ vim.api.nvim_command 'command! -range -nargs=* CC <line1>,<line2>CopilotChat <q-
 
 vim.g.python3_host_prog = '/home/brent/anaconda3/bin/python'
 
--- vim: ts=2 sts=2 sw=2 et
---
--- The UFO plugin defines these values.
--- vim.opt.foldmethod = 'manual'
-
-vim.opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
 vim.opt.foldlevel = 99
 vim.opt.foldlevelstart = 1
 vim.opt.foldnestmax = 4
 vim.opt.foldcolumn = '0'
-vim.opt.foldtext = 'nvim_treesitter#foldtext()'
+
+-- The UFO plugin requires manual
+vim.opt.foldmethod = 'manual'
+
+-- Using treesitter for folding
+-- vim.opt.foldmethod = 'expr'
+-- vim.opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+-- vim.opt.foldtext = 'nvim_treesitter#foldtext()'
+function _G.custom_foldtext()
+  local line = vim.fn.getline(vim.v.foldstart)
+  return '  ' .. line .. ' ...'
+end
+-- vim.opt.foldtext = 'v:lua.custom_foldtext()'
+--
+-- vim: ts=2 sts=2 sw=2 et
