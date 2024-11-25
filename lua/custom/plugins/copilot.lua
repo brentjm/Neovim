@@ -17,13 +17,31 @@ return {
           description = 'Pirate Speak',
         },
       },
-      window = {
-        layout = 'float',
-        relative = 'cursor',
-        width = 1,
-        height = 0.4,
-        row = 1,
+      contexts = {
+        register = {
+          input = function(callback)
+            vim.ui.input({ prompt = 'Enter register> ' }, callback)
+          end,
+          resolve = function(input)
+            input = input or '"'
+            local register_content = vim.fn.getreg(input)
+            return {
+              {
+                content = register_content,
+                filename = 'register_' .. input,
+                filetype = 'text',
+              },
+            }
+          end,
+        },
       },
+      -- window = {
+      --   layout = 'float',
+      --   relative = 'cursor',
+      --   width = 1,
+      --   height = 0.4,
+      --   row = 1,
+      -- },
     },
     --    config = function()
     --      vim.api.nvim_set_keymap('i', '<C-J>', 'copilot#Accept("<CR>")', { silent = true, expr = true })
