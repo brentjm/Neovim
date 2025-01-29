@@ -159,6 +159,21 @@ return {
         clangd = {},
         gopls = {},
         pyright = {},
+        pylsp = {
+          settings = {
+            pylsp = {
+              plugins = {
+                pylsp_mypy = {
+                  enabled = true,
+                  live_mode = false,
+                },
+                pylsp_black = {
+                  enabled = true,
+                },
+              },
+            },
+          },
+        },
         -- rust_analyzer = {},
         bashls = {},
         csharp_ls = {},
@@ -175,7 +190,6 @@ return {
         --
         -- But for many setups, the LSP (`tsserver`) will work just fine
         ts_ls = {},
-        --
 
         lua_ls = {
           -- cmd = {...},
