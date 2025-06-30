@@ -202,7 +202,6 @@ return {
         docker_compose_language_service = {},
         ansiblels = {},
         ltex = {},
-        vale = {},
 
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
@@ -242,6 +241,7 @@ return {
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
         'ruff', -- Used to format Python code
+        'vale',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
