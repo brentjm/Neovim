@@ -192,9 +192,8 @@ return {
         cmake = {},
         dockerls = {},
         docker_compose_language_service = {},
-        ansible_language_server = {},
+        ansiblels = {},
         ltex = {},
-        markdownlint = {},
         vale = {},
 
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
@@ -239,6 +238,8 @@ return {
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
       require('mason-lspconfig').setup {
+        ensure_installed = vim.tbl_keys(servers or {}),
+        automatic_installation = true,
         handlers = {
           function(server_name)
             local server = servers[server_name] or {}
