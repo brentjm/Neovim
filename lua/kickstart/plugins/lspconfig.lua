@@ -162,27 +162,37 @@ return {
         clangd = {},
         gopls = {},
         pyright = {},
-        pylsp = {
+        -- pylsp = {
+        --   settings = {
+        --     pylsp = {
+        --       plugins = {
+        --         pylsp_mypy = {
+        --           enabled = true,
+        --           live_mode = false,
+        --         },
+        --         pylsp_black = {
+        --           enabled = true,
+        --         },
+        --       },
+        --     },
+        --   },
+        -- },
+        -- rust_analyzer = {},
+        bashls = {},
+        csharp_ls = {
+          cmd = { 'csharp-ls' }, -- Ensure the binary is available
+          filetypes = { 'cs' },
+          root_dir = require('lspconfig.util').root_pattern('*.sln', '*.csproj', '.git'),
           settings = {
-            pylsp = {
-              plugins = {
-                pylsp_mypy = {
-                  enabled = true,
-                  live_mode = false,
-                },
-                pylsp_black = {
-                  enabled = true,
-                },
-              },
+            csharp = {
+              semantic_highlighting = true,
             },
           },
         },
-        -- rust_analyzer = {},
-        bashls = {},
-        csharp_ls = {},
         cmake = {},
         dockerls = {},
         docker_compose_language_service = {},
+        ansible_language_server = {},
         ltex = {},
         markdownlint = {},
         vale = {},
@@ -224,6 +234,7 @@ return {
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
+        'ruff', -- Used to format Python code
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
