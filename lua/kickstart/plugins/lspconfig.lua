@@ -179,13 +179,21 @@ return {
         -- },
         -- rust_analyzer = {},
         bashls = {},
-        csharp_ls = {
-          cmd = { 'csharp-ls' }, -- Ensure the binary is available
-          filetypes = { 'cs' },
-          root_dir = require('lspconfig.util').root_pattern('*.sln', '*.csproj', '.git'),
+        omnisharp = {
+          cmd = { 'omnisharp', '--languageserver', '--hostPID', tostring(vim.fn.getpid()) },
+          filetypes = { 'cs', 'vb' },
+          root_dir = require('lspconfig.util').root_pattern('*.sln', '*.csproj', 'omnisharp.json', '.git'),
           settings = {
-            csharp = {
-              semantic_highlighting = true,
+            FormattingOptions = {
+              EnableEditorConfigSupport = true,
+              OrganizeImports = nil,
+            },
+            MsBuild = {
+              LoadProjectsOnDemand = nil,
+            },
+            RoslynExtensionsOptions = {
+              EnableAnalyzersSupport = nil,
+              EnableImportCompletion = nil,
             },
           },
         },
