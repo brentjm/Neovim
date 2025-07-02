@@ -28,6 +28,7 @@ require('lazy').setup({
   -- modular approach: using `require 'path/name'` will
   -- include a plugin definition from file lua/path/name.lua
 
+  require 'plugins.lspconfig',
   require 'plugins.gitsigns',
   require 'plugins.which-key',
   require 'plugins.telescope',
@@ -51,7 +52,6 @@ require('lazy').setup({
   require 'plugins.markdown-preview',
   require 'plugins.surround',
   require 'plugins.vimtex',
-  require 'plugins.lspconfig',
   -- require 'plugins.ufo',
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
