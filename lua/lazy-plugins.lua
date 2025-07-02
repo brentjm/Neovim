@@ -31,28 +31,28 @@ require('lazy').setup({
   require 'plugins.gitsigns',
   require 'plugins.which-key',
   require 'plugins.telescope',
-  require 'plugins.lspconfig',
   require 'plugins.conform',
   require 'plugins.cmp',
   require 'plugins.tokyonight',
   require 'plugins.todo-comments',
   require 'plugins.mini',
   require 'plugins.treesitter',
-
+  --
   require 'plugins.debug',
   require 'plugins.indent_line',
   require 'plugins.lint',
   require 'plugins.autopairs',
   require 'plugins.neo-tree',
-
+  --
   require 'plugins.colorschemes',
   require 'plugins.copilot',
   require 'plugins.fugitive',
   require 'plugins.lazygit',
   require 'plugins.markdown-preview',
   require 'plugins.surround',
-  require 'plugins.ufo',
   require 'plugins.vimtex',
+  require 'plugins.lspconfig',
+  -- require 'plugins.ufo',
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.

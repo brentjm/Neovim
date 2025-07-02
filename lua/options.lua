@@ -59,4 +59,42 @@ vim.opt.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
 
+-- Change tabs to spaces
+vim.opt.expandtab = true
+
+-- Default to 4 spaces for indentation
+vim.opt.shiftwidth = 4
+--
+-- Default to 4 spaces for tabs
+vim.opt.tabstop = 4
+
+-- Enable auto-indenting on new lines
+vim.opt.smartindent = true
+
+-- Enable auto-indenting on new lines
+vim.opt.autoindent = true
+
+-- Use TokeyNight theme
+vim.cmd.colorscheme 'tokyonight-day'
+
+vim.g.python3_host_prog = '/home/brent/anaconda3/bin/python'
+
+vim.opt.foldlevelstart = 99
+vim.opt.foldlevel = 99
+vim.opt.foldnestmax = 4
+vim.opt.foldcolumn = '0'
+
+-- The UFO plugin requires manual
+vim.opt.foldmethod = 'manual'
+
+-- Using treesitter for folding
+-- vim.opt.foldmethod = 'expr'
+-- vim.opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+-- vim.opt.foldtext = 'nvim_treesitter#foldtext()'
+function _G.custom_foldtext()
+  local line = vim.fn.getline(vim.v.foldstart)
+  return '  ' .. line .. ' ...'
+end
+-- vim.opt.foldtext = 'v:lua.custom_foldtext()'
+--
 -- vim: ts=2 sts=2 sw=2 et
