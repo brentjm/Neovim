@@ -105,4 +105,6 @@ require 'lazy-plugins'
 -- [[ Setting custom options ]]
 require 'options'
 
+require 'config' -- Configure file
+
 -- vim: ts=2 sts=2 sw=2 et
